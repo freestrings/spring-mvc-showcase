@@ -14,7 +14,11 @@ import org.springframework.web.context.request.async.WebAsyncTask;
 @RequestMapping("/async/callable")
 public class CallableController {
 
-
+	/**
+	 * Callable sample. delay a respose during 2 second. 
+	 * 
+	 * <br>e.g.) http://localhost:8080/spring-mvc-showcase/async/callable/response-body
+	 */
 	@RequestMapping("/response-body")
 	public @ResponseBody Callable<String> callable() {
 
@@ -27,6 +31,14 @@ public class CallableController {
 		};
 	}
 
+	/**
+	 * Callable sample. delay a response during 2 second.
+	 * 
+	 * <br>e.g.) http://localhost:8080/spring-mvc-showcase/async/callable/view
+	 * 
+	 * @param model - injected by springframework.
+	 * @return - The result html of "views/html.jsp".
+	 */
 	@RequestMapping("/view")
 	public Callable<String> callableWithView(final Model model) {
 
@@ -40,7 +52,12 @@ public class CallableController {
 			}
 		};
 	}
-
+	
+	/**
+	 * Callable sample. delay a response during 2 second.
+	 * <br>e.g.) http://localhost:8080/spring-mvc-showcase/async/callable/exception
+	 * @param handled - default "true"
+	 */
 	@RequestMapping("/exception")
 	public @ResponseBody Callable<String> callableWithException(
 			final @RequestParam(required=false, defaultValue="true") boolean handled) {
@@ -59,7 +76,11 @@ public class CallableController {
 			}
 		};
 	}
-
+	
+	/**
+	 * Callable sample. delay a response during 2 second.
+	 * <br>e.g.) http://localhost:8080/spring-mvc-showcase/async/callable/custom-timeout-handling
+	 */
 	@RequestMapping("/custom-timeout-handling")
 	public @ResponseBody WebAsyncTask<String> callableWithCustomTimeoutHandling() {
 

@@ -7,27 +7,47 @@ import java.util.Map;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.DateTimeFormat.ISO;
 
+/**
+ * Type conversion sample. parameter as object.
+ */
 public class JavaBean {
 	
+	/**
+	 * primitive value
+	 */
 	private Integer primitive;
 	
+	/**
+	 * date value. datetimeformat
+	 */
 	@DateTimeFormat(iso=ISO.DATE)
 	private Date date;
 
+	/**
+	 * masked value
+	 */
 	@MaskFormat("(###) ###-####")
 	private String masked;
 
-	// list will auto-grow as its dereferenced e.g. list[0]=value
+	/**
+	 * list will auto-grow as its dereferenced e.g. list[0]=value
+	 */
 	private List<Integer> list;
 
-	// annotation type conversion rule will be applied to each list element
+	/**
+	 * annotation type conversion rule will be applied to each list element
+	 */
 	@DateTimeFormat(iso=ISO.DATE)
 	private List<Date> formattedList;
 
-	// map will auto-grow as its dereferenced e.g. map[key]=value
+	/**
+	 * map will auto-grow as its dereferenced e.g. map[key]=value
+	 */
 	private Map<Integer, String> map;
 
-	// nested will be set when it is referenced e.g. nested.foo=value
+	/**
+	 * nested will be set when it is referenced e.g. nested.foo=value
+	 */
 	private NestedBean nested;
 
     public Integer getPrimitive() {

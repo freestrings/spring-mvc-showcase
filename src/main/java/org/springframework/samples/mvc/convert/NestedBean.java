@@ -3,12 +3,24 @@ package org.springframework.samples.mvc.convert;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * It is test class for nested bean.
+ */
 public class NestedBean {
 	
+	/**
+	 * foo value
+	 */
 	private String foo;
 
+	/**
+	 * nested list
+	 */
 	private List<NestedBean> list;
 	
+	/**
+	 * map value
+	 */
 	private Map<String, NestedBean> map;
 	
 	public String getFoo() {

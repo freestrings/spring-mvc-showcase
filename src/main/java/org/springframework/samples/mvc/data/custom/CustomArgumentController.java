@@ -16,6 +16,12 @@ public class CustomArgumentController {
 		request.setAttribute("foo", "bar");
 	}
 	
+	/**
+	 *  Custom Resolvable Web Arguments.<br>
+	 *  
+	 *  @RequestAttribute("foo") fetch the value via HttpServletRequest.getAttribute("foo")<br>
+	 *  e.g.) http://localhost:8080/spring-mvc-showcase/data/custom
+	 */
 	@RequestMapping(value="/data/custom", method=RequestMethod.GET)
 	public @ResponseBody String custom(@RequestAttribute("foo") String foo) {
 		return "Got 'foo' request attribute value '" + foo + "'";

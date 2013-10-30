@@ -8,18 +8,34 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class ExceptionController {
 
+	/**
+	 * Exception Handling Sample.
+	 * 
+	 * @ExceptionHandler in Controller<br>
+	 *                   e.g.) http://localhost:8080/spring-mvc-showcase/exception
+	 */
 	@RequestMapping("/exception")
-	public @ResponseBody String exception() {
+	public @ResponseBody
+	String exception() {
 		throw new IllegalStateException("Sorry!");
 	}
 
+	/**
+	 * Exception Handling Sample.
+	 * 
+	 * @ExceptionHandler Global<br>
+	 * 
+	 *                   e.g.) http://localhost:8080/spring-mvc-showcase/global-exception
+	 */
 	@RequestMapping("/global-exception")
-	public @ResponseBody String businessException() throws BusinessException {
+	public @ResponseBody
+	String businessException() throws BusinessException {
 		throw new BusinessException();
 	}
 
 	@ExceptionHandler
-	public @ResponseBody String handle(IllegalStateException e) {
+	public @ResponseBody
+	String handle(IllegalStateException e) {
 		return "IllegalStateException handled!";
 	}
 

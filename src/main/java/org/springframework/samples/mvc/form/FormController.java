@@ -37,6 +37,9 @@ public class FormController {
 	public void form() {
 	}
 
+	/**
+	 * Forms Sample. 
+	 */
 	@RequestMapping(method=RequestMethod.POST)
 	public String processSubmit(@Valid FormBean formBean, BindingResult result, 
 								@ModelAttribute("ajaxRequest") boolean ajaxRequest, 
