@@ -1,5 +1,15 @@
+This repository is for [Shreder](https://github.com/freestrings/shreder-brackets)
+---
+
+`Shreder` is Simple Documentation Generator based on Brackets.
+
+![shreder1](../master/images/shreder1.png)
+
+![shreder2](../master/images/shreder2.png)
+
 Spring MVC Showcase
 -------------------
+
 Demonstrates the capabilities of the Spring MVC web framework through small, simple examples.
 After reviewing this showcase, you should have a good understanding of what Spring MVC can do and get a feel for how easy it is to use.
 Includes project code along with a supporting slideshow and screen cast.
