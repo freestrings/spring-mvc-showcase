@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class ClasslevelMappingController {
 
 	/**
-	 * Request Mapping Sample. by path<br>
+	 * Request Mapping Sample. by path<br><br>
 	 * 
 	 * e.g.) http://localhost:8080/spring-mvc-showcase/class-mapping/path 
 	 */
@@ -23,7 +23,7 @@ public class ClasslevelMappingController {
 	}
 
 	/**
-	 * Request Mapping Sample. by path<br>
+	 * Request Mapping Sample. by path<br><br>
 	 * 
 	 * e.g.) http://localhost:8080/spring-mvc-showcase/class-mapping/path 
 	 */
@@ -33,7 +33,7 @@ public class ClasslevelMappingController {
 	}
 
 	/**
-	 * Request Mapping Sample. by path + method<br>
+	 * Request Mapping Sample. by path + method<br><br>
 	 * 
 	 * e.g.) http://localhost:8080/spring-mvc-showcase/class-mapping/method 
 	 */
@@ -43,7 +43,7 @@ public class ClasslevelMappingController {
 	}
 
 	/**
-	 * Request Mapping Sample. by path + method + presence of query parameter<br>
+	 * Request Mapping Sample. by path + method + presence of query parameter<br><br>
 	 * 
 	 * e.g.) http://localhost:8080/spring-mvc-showcase/class-mapping/parameter?foo=1
 	 */
@@ -53,7 +53,7 @@ public class ClasslevelMappingController {
 	}
 
 	/**
-	 * Request Mapping Sample. by path + method + not presence of query!<br>
+	 * Request Mapping Sample. by path + method + not presence of query!<br><br>
 	 * 
 	 * e.g.) http://localhost:8080/spring-mvc-showcase/class-mapping/parameter?aoo=1
 	 * @return
@@ -64,7 +64,7 @@ public class ClasslevelMappingController {
 	}
 
 	/**
-	 * Request Mapping Sample. by path + method + presence of header!<br>
+	 * Request Mapping Sample. by path + method + presence of header!<br><br>
 	 * 
 	 * e.g.) http://localhost:8080/spring-mvc-showcase/class-mapping/hreader
 	 */
@@ -74,7 +74,7 @@ public class ClasslevelMappingController {
 	}
 
 	/**
-	 * Request Mapping Sample. by path + method + absence of header!<br>
+	 * Request Mapping Sample. by path + method + absence of header!<br><br>
 	 * 
 	 * e.g.) http://localhost:8080/spring-mvc-showcase/class-mapping/notheader
 	 */
@@ -84,7 +84,7 @@ public class ClasslevelMappingController {
 	}
 
 	/**
-	 * Request Mapping Sample. path + method + consumable media type<br>
+	 * Request Mapping Sample. path + method + consumable media type<br><br>
 	 */
 	@RequestMapping(value="/consumes", method=RequestMethod.POST, consumes="application/json")
 	public @ResponseBody String byConsumes(@RequestBody JavaBean javaBean) {

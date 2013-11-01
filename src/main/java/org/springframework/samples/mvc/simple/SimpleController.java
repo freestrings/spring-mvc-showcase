@@ -7,6 +7,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class SimpleController {
 
+	/**
+	 * Simple controller declare Sample.
+	 */
 	@RequestMapping("/simple")
 	public @ResponseBody String simple() {
 		return "Hello world!";

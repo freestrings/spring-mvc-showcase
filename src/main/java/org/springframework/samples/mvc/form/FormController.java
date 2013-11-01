@@ -33,6 +33,9 @@ public class FormController {
 		return new FormBean();
 	}
 	
+	/**
+	 * Forms Sample. Do nothing. 
+	 */
 	@RequestMapping(method=RequestMethod.GET)
 	public void form() {
 	}

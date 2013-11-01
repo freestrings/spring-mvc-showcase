@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class ExceptionController {
 
 	/**
-	 * Exception Handling Sample.
+	 * Exception Handling Sample. <br>
 	 * 
 	 * @ExceptionHandler in Controller<br>
 	 *                   e.g.) http://localhost:8080/spring-mvc-showcase/exception
@@ -21,7 +21,7 @@ public class ExceptionController {
 	}
 
 	/**
-	 * Exception Handling Sample.
+	 * Exception Handling Sample. <br>
 	 * 
 	 * @ExceptionHandler Global<br>
 	 * 

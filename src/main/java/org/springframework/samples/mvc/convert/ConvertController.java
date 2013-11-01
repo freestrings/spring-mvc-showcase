@@ -16,8 +16,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class ConvertController {
 
 	/**
-	 * Type conversion sample.
-	 * <br>e.g.) http://localhost:8080/spring-mvc-showcase/convert/primitive?value=3
+	 * Type conversion sample. <br>
+	 * <br>
+	 * e.g.) http://localhost:8080/spring-mvc-showcase/convert/primitive?value=3
 	 */
 	@RequestMapping("primitive")
 	public @ResponseBody String primitive(@RequestParam Integer value) {
@@ -26,7 +27,7 @@ public class ConvertController {
 
 	// requires Joda-Time on the classpath
 	/**
-	 * Type conversion sample.
+	 * Type conversion sample.<br>
 	 * <br>e.g.) http://localhost:8080/spring-mvc-showcase/convert/date/2010-07-04
 	 */
 	@RequestMapping("date/{value}")
@@ -35,7 +36,7 @@ public class ConvertController {
 	}
 
 	/**
-	 * Type conversion sample.<br>
+	 * Type conversion sample.<br><br>
 	 * 
 	 * <br>multi-value parameter:
 	 * <br> e.g.) http://localhost:8080/spring-mvc-showcase/convert/collection?values=1&values=2&values=3&values=4&values=5<br>
@@ -57,22 +58,16 @@ public class ConvertController {
 	}
 	
 	/**
-	 * Type conversion sample.<br>
+	 * Type conversion sample.<br><br>
 	 * 
-	 * <br>Primitive:
-	 * <br> e.g.) http://localhost:8080/spring-mvc-showcase/convert/bean?primitive=3<br>
-	 * <br>Date:
-	 * <br> e.g.) http://localhost:8080/spring-mvc-showcase/convert/bean?date=2010-07-04<br>
-	 * <br>Masked:
-	 * <br> e.g.) http://localhost:8080/spring-mvc-showcase/convert/bean?masked=(205)%20333-3333<br>
-	 * <br>List Elements:
-	 * <br> e.g.) http://localhost:8080/spring-mvc-showcase/convert/bean?list[0]=1&list[1]=2&list[2]=3<br>
-	 * <br>Formatted List Elements:
-	 * <br> e.g.) http://localhost:8080/spring-mvc-showcase/convert/bean?formattedList[0]=2010-07-04&formattedList[1]=2011-07-04<br>
-	 * <br>Map Elements:
-	 * <br> e.g.) http://localhost:8080/spring-mvc-showcase/convert/bean?map[0]=apple&map[1]=pear<br>
-	 * <br>Nested:
-	 * <br> e.g.) http://localhost:8080/spring-mvc-showcase/convert/bean?nested.foo=bar&nested.list[0].foo=baz&nested.map[key].list[0].foo=bip<br>
+	 * e.g.)
+	 * <br>Primitive: http://localhost:8080/spring-mvc-showcase/convert/bean?primitive=3<br>
+	 * <br>Date: http://localhost:8080/spring-mvc-showcase/convert/bean?date=2010-07-04<br>
+	 * <br>Masked: http://localhost:8080/spring-mvc-showcase/convert/bean?masked=(205)%20333-3333<br>
+	 * <br>List Elements: http://localhost:8080/spring-mvc-showcase/convert/bean?list[0]=1&list[1]=2&list[2]=3<br>
+	 * <br>Formatted List Elements: http://localhost:8080/spring-mvc-showcase/convert/bean?formattedList[0]=2010-07-04&formattedList[1]=2011-07-04<br>
+	 * <br>Map Elements: http://localhost:8080/spring-mvc-showcase/convert/bean?map[0]=apple&map[1]=pear<br>
+	 * <br>Nested: http://localhost:8080/spring-mvc-showcase/convert/bean?nested.foo=bar&nested.list[0].foo=baz&nested.map[key].list[0].foo=bip<br>
 	 */
 	@RequestMapping("bean")
 	public @ResponseBody String bean(JavaBean bean) {
@@ -80,7 +75,7 @@ public class ConvertController {
 	}
 	
 	/**
-	 * Type conversion sample. - Custom Value Object.
+	 * Type conversion sample. - Custom Value Object. <br>
 	 * <br>e.g.) http://localhost:8080/spring-mvc-showcase/convert/value?value=123456789
 	 */
 	@RequestMapping("value")
@@ -89,7 +84,7 @@ public class ConvertController {
 	}
 
 	/**
-	 * Type conversion sample. Custom Converter
+	 * Type conversion sample. Custom Converter <br>
 	 * <br>e.g.) http://localhost:8080/spring-mvc-showcase/convert/custom?value=123-45-6789
 	 */
 	@RequestMapping("custom")

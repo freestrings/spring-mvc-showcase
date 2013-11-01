@@ -15,12 +15,13 @@ import org.springframework.web.context.request.async.WebAsyncTask;
 public class CallableController {
 
 	/**
-	 * Callable sample. delay a respose during 2 second. 
+	 * Callable sample. delay a respose during 2 second.
 	 * 
-	 * <br>e.g.) http://localhost:8080/spring-mvc-showcase/async/callable/response-body
+	 * e.g.) http://localhost:8080/spring-mvc-showcase/async/callable/response-body
 	 */
 	@RequestMapping("/response-body")
-	public @ResponseBody Callable<String> callable() {
+	public @ResponseBody
+	Callable<String> callable() {
 
 		return new Callable<String>() {
 			@Override
@@ -34,9 +35,11 @@ public class CallableController {
 	/**
 	 * Callable sample. delay a response during 2 second.
 	 * 
-	 * <br>e.g.) http://localhost:8080/spring-mvc-showcase/async/callable/view
+	 * <br>
+	 * e.g.) http://localhost:8080/spring-mvc-showcase/async/callable/view
 	 * 
-	 * @param model - injected by springframework.
+	 * @param model
+	 *            - injected by springframework.
 	 * @return - The result html of "views/html.jsp".
 	 */
 	@RequestMapping("/view")
@@ -52,15 +55,18 @@ public class CallableController {
 			}
 		};
 	}
-	
+
 	/**
-	 * Callable sample. delay a response during 2 second.
-	 * <br>e.g.) http://localhost:8080/spring-mvc-showcase/async/callable/exception
-	 * @param handled - default "true"
+	 * Callable sample. delay a response during 2 second. <br>
+	 * <br>
+	 * e.g.) http://localhost:8080/spring-mvc-showcase/async/callable/exception <br>
+	 * 
+	 * @param handled
+	 *            - default "true"
 	 */
 	@RequestMapping("/exception")
-	public @ResponseBody Callable<String> callableWithException(
-			final @RequestParam(required=false, defaultValue="true") boolean handled) {
+	public @ResponseBody
+	Callable<String> callableWithException(final @RequestParam(required = false, defaultValue = "true") boolean handled) {
 
 		return new Callable<String>() {
 			@Override
@@ -69,20 +75,21 @@ public class CallableController {
 				if (handled) {
 					// see handleException method further below
 					throw new IllegalStateException("Callable error");
-				}
-				else {
+				} else {
 					throw new IllegalArgumentException("Callable error");
 				}
 			}
 		};
 	}
-	
+
 	/**
-	 * Callable sample. delay a response during 2 second.
-	 * <br>e.g.) http://localhost:8080/spring-mvc-showcase/async/callable/custom-timeout-handling
+	 * Callable sample. delay a response during 2 second. <br>
+	 * <br>
+	 * e.g.) http://localhost:8080/spring-mvc-showcase/async/callable/custom-timeout-handling
 	 */
 	@RequestMapping("/custom-timeout-handling")
-	public @ResponseBody WebAsyncTask<String> callableWithCustomTimeoutHandling() {
+	public @ResponseBody
+	WebAsyncTask<String> callableWithCustomTimeoutHandling() {
 
 		Callable<String> callable = new Callable<String>() {
 			@Override

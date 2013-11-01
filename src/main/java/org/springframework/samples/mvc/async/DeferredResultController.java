@@ -22,19 +22,23 @@ public class DeferredResultController {
 	private final Queue<DeferredResult<String>> exceptionQueue = new ConcurrentLinkedQueue<DeferredResult<String>>();
 
 	/**
-	 * DeferredResult sample. delay a respose during 2 second.
-	 * <br>e.g.) http://localhost:8080/spring-mvc-showcase/async/deferred-result/response-body
+	 * DeferredResult sample. delay a respose during 2 second. <br>
+	 * <br>
+	 * e.g.) http://localhost:8080/spring-mvc-showcase/async/deferred-result/response-body
 	 */
 	@RequestMapping("/deferred-result/response-body")
-	public @ResponseBody DeferredResult<String> deferredResult() {
+	public @ResponseBody
+	DeferredResult<String> deferredResult() {
 		DeferredResult<String> result = new DeferredResult<String>();
 		this.responseBodyQueue.add(result);
 		return result;
 	}
-	
+
 	/**
-	 * DeferredResult sample. delay a respose during 2 second.
-	 * <br>e.g.) http://localhost:8080/spring-mvc-showcase/async/deferred-result/model-and-view
+	 * DeferredResult sample. delay a respose during 2 second. <br>
+	 * <br>
+	 * e.g.) http://localhost:8080/spring-mvc-showcase/async/deferred-result/model-and-view
+	 * 
 	 * @return - The result html of "views/html.jsp".
 	 */
 	@RequestMapping("/deferred-result/model-and-view")
@@ -43,24 +47,27 @@ public class DeferredResultController {
 		this.mavQueue.add(result);
 		return result;
 	}
-	
+
 	/**
-	 * DeferredResult sample. delay a respose during 2 second.
-	 * <br>e.g.) http://localhost:8080/spring-mvc-showcase/async/deferred-result/exception
+	 * DeferredResult sample. delay a respose during 2 second. <br>
+	 * e.g.) http://localhost:8080/spring-mvc-showcase/async/deferred-result/exception
 	 */
 	@RequestMapping("/deferred-result/exception")
-	public @ResponseBody DeferredResult<String> deferredResultWithException() {
+	public @ResponseBody
+	DeferredResult<String> deferredResultWithException() {
 		DeferredResult<String> result = new DeferredResult<String>();
 		this.exceptionQueue.add(result);
 		return result;
 	}
-	
+
 	/**
-	 * DeferredResult sample. delay a respose during 1 second.
-	 * <br>e.g.) http://localhost:8080/spring-mvc-showcase/async/deferred-result/timeout-value
+	 * DeferredResult sample. delay a respose during 1 second. <br>
+	 * <br>
+	 * e.g.) http://localhost:8080/spring-mvc-showcase/async/deferred-result/timeout-value
 	 */
 	@RequestMapping("/deferred-result/timeout-value")
-	public @ResponseBody DeferredResult<String> deferredResultWithTimeoutValue() {
+	public @ResponseBody
+	DeferredResult<String> deferredResultWithTimeoutValue() {
 
 		// Provide a default result in case of timeout and override the timeout value
 		// set in src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml
@@ -68,7 +75,7 @@ public class DeferredResultController {
 		return new DeferredResult<String>(1000L, "Deferred result after timeout");
 	}
 
-	@Scheduled(fixedRate=2000)
+	@Scheduled(fixedRate = 2000)
 	public void processQueues() {
 		for (DeferredResult<String> result : this.responseBodyQueue) {
 			result.setResult("Deferred result");

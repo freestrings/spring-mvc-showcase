@@ -1,5 +1,8 @@
 package org.springframework.samples.mvc.async;
 
+/**
+ * For Async test.
+ */
 public class JavaBean {
 
 	private String foo;

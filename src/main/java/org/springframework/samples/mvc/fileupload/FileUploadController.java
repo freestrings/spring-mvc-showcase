@@ -21,10 +21,16 @@ public class FileUploadController {
 		model.addAttribute("ajaxRequest", AjaxUtils.isAjaxRequest(request));
 	}
 
+	/**
+	 * Fileupload Sample. Do nothing.
+	 */
 	@RequestMapping(method=RequestMethod.GET)
 	public void fileUploadForm() {
 	}
 
+	/**
+	 * Fileupload Sample.
+	 */
 	@RequestMapping(method=RequestMethod.POST)
 	public void processUpload(@RequestParam MultipartFile file, Model model) throws IOException {
 		model.addAttribute("message", "File '" + file.getOriginalFilename() + "' uploaded successfully");

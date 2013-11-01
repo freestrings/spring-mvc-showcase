@@ -24,6 +24,9 @@ public class RedirectController {
 		this.conversionService = conversionService;
 	}
 
+	/**
+	 * Redirect Sample.
+	 */
 	@RequestMapping(value="/uriTemplate", method=RequestMethod.GET)
 	public String uriTemplate(RedirectAttributes redirectAttrs) {
 		redirectAttrs.addAttribute("account", "a123");  // Used as URI template variable
@@ -31,6 +34,9 @@ public class RedirectController {
 		return "redirect:/redirect/{account}";
 	}
 
+	/**
+	 * Redirect Sample.
+	 */
 	@RequestMapping(value="/uriComponentsBuilder", method=RequestMethod.GET)
 	public String uriComponentsBuilder() {
 		String date = this.conversionService.convert(new LocalDate(2011, 12, 31), String.class);
